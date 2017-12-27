@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="FontRendering">
+      <UniqueIdentifier>{99addfea-1e50-4506-9b06-1fe3ad2e8fdf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Dx11Plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1ColorRGBA.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1ColorRGBAInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1DWriteRenderTarget.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1DWriteRenderTargetInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1Factory.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1FactoryInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1FontWrapper.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1FontWrapperInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1GlyphAtlas.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1GlyphAtlasInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1GlyphProvider.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1GlyphProviderInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1GlyphRenderStates.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1GlyphRenderStatesInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1GlyphSheet.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1GlyphSheetInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1GlyphVertexDrawer.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1GlyphVertexDrawerInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1StateSaver.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1TextGeometry.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1TextGeometryInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1TextRenderer.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\CFW1TextRendererInterface.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\FW1FontWrapper.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FontRendering\FW1Precompiled.cpp">
+      <Filter>FontRendering</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PluginObjects.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InternalsPlugin.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1ColorRGBA.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1DWriteRenderTarget.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1Factory.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1FontWrapper.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1GlyphAtlas.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1GlyphProvider.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1GlyphRenderStates.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1GlyphSheet.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1GlyphVertexDrawer.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1Object.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1StateSaver.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1TextGeometry.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\CFW1TextRenderer.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\FW1CompileSettings.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\FW1FontWrapper.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FontRendering\FW1Precompiled.h">
+      <Filter>FontRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Dx11Plugin.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
