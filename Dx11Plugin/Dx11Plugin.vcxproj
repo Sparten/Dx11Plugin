@@ -173,6 +173,7 @@
     <ClCompile Include="..\FontRendering\FW1FontWrapper.cpp" />
     <ClCompile Include="..\FontRendering\FW1Precompiled.cpp" />
     <ClCompile Include="Dx11Plugin.cpp" />
+    <ClCompile Include="renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\FontRendering\CFW1ColorRGBA.h" />
@@ -194,6 +195,8 @@
     <ClInclude Include="Dx11Plugin.hpp" />
     <ClInclude Include="InternalsPlugin.hpp" />
     <ClInclude Include="PluginObjects.hpp" />
+    <ClInclude Include="renderer.hpp" />
+    <ClInclude Include="shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

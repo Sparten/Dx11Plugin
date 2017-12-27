@@ -6,7 +6,8 @@
 #include "Dx11Plugin.hpp"
 #include "InternalsPlugin.hpp"
 #include "..\PolyHook\PolyHook.hpp"
-#include "..\FontRendering\FW1FontWrapper.h"
+#include "renderer.hpp"
+
 #pragma comment(lib, "d3d11.lib")
 
 typedef HRESULT(__stdcall *D3D11PresentHook) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
@@ -19,8 +20,7 @@ DWORD_PTR* pDeviceContextVTable = NULL;
 
 D3D11PresentHook phookD3D11Present = NULL;
 
-IFW1Factory *pFW1Factory = NULL;
-IFW1FontWrapper *pFontWrapper = NULL;
+std::unique_ptr<Renderer> renderer;
 
 bool firstTime = true;
 
@@ -80,15 +80,19 @@ HRESULT __stdcall hookD3D11Present(IDXGISwapChain* pSwapChain, UINT SyncInterval
 	{
 		pSwapChain->GetDevice(__uuidof(pDevice), (void**)&pDevice);
 		pDevice->GetImmediateContext(&pContext);
-
-		FW1CreateFactory(FW1_VERSION, &pFW1Factory);
-		pFW1Factory->CreateFontWrapper(pDevice, L"Tahoma", &pFontWrapper);
+		renderer = std::make_unique<Renderer>(pDevice);
 		add_log("Hooked IDXGISwapChain::Present");
-		pFW1Factory->Release();
 		firstTime = false;
 	}
-	pFontWrapper->DrawString(pContext, L"So Want To Draw Debug text to screen In DX11 ?", 24.0f, 16.0f, 16.0f, 0xffff1612, FW1_RESTORESTATE);
+	renderer->begin();
+
+	Color goodLookingColor{ 0.f, 255.f, 0.f, 255.f };
+	renderer->drawFilledRect(Vec4(15, 15, 400, 30),goodLookingColor);
+	goodLookingColor = { 0.f, 0.f, 255.f, 255.f };
+	renderer->drawText(Vec2(20, 20), L"So you want to make a paint in dx 11", goodLookingColor, 0, 20.f);
 	
+	renderer->draw();
+	renderer->end();
 	return phookD3D11Present(pSwapChain, SyncInterval, Flags);
 }
 
