@@ -1,5 +1,4 @@
-//Remember to rename GameOverlayRenderer.dll and GameOverlayRenderer64.dll for this to work.
-//and install directx SDK https://www.microsoft.com/en-us/download/details.aspx?id=6812
+//install directx SDK https://www.microsoft.com/en-us/download/details.aspx?id=6812
 #include <Windows.h>
 #include <d3d11.h>
 #include <string>
@@ -123,7 +122,7 @@ void Dx11Plugin::InitializeHook()
 	pSwapChainVtable = (DWORD_PTR*)pSwapChainVtable[0];
 
 	PLH::Detour* PresentHook = new PLH::Detour();
-	PresentHook->SetupHook((PBYTE)pSwapChainVtable[8], (BYTE*)&hookD3D11Present);
+	PresentHook->SetupHook((PBYTE)pSwapChainVtable[8] + 0x5, (BYTE*)&hookD3D11Present);
 	PresentHook->Hook();
 	phookD3D11Present = PresentHook->GetOriginal<D3D11PresentHook>();
 
