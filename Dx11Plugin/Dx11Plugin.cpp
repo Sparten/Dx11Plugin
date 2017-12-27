@@ -8,7 +8,6 @@
 #include "InternalsPlugin.hpp"
 #include "..\PolyHook\PolyHook.hpp"
 #include "..\FontRendering\FW1FontWrapper.h"
-
 #pragma comment(lib, "d3d11.lib")
 
 typedef HRESULT(__stdcall *D3D11PresentHook) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
