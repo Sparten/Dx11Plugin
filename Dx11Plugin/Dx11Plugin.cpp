@@ -7,6 +7,7 @@
 #include "InternalsPlugin.hpp"
 #include "..\PolyHook\PolyHook.hpp"
 #include "renderer.hpp"
+#include "PatternFinder.hpp"
 
 #pragma comment(lib, "d3d11.lib")
 
@@ -23,6 +24,8 @@ D3D11PresentHook phookD3D11Present = NULL;
 std::unique_ptr<Renderer> renderer;
 
 bool firstTime = true;
+
+uintptr_t* stringAddress = nullptr;
 
 // plugin information
 extern "C" __declspec(dllexport)
@@ -71,6 +74,16 @@ void __cdecl add_log(const char *fmt, ...)
 
 void Dx11Plugin::Startup(long version)
 {
+	HMODULE mainModule = GetModuleHandle(NULL);
+	while (stringAddress == nullptr)
+	{
+		stringAddress = FindPatternForPointerInMemory(mainModule,
+			(unsigned char *)"\x48\x89\x5C\x24\x08\x57\x48\x83\xEC\x20\x48\x8D\x3D\x2F\x09\x4B\x01\x48\x8B\xDA\x4C\x8B\xC7",
+			(CHAR *)"xxxxxxxxxxxxx????xxxxxx", 13);
+		Sleep(50);
+	}
+	add_log("%llx", stringAddress);
+	InitializeHook();
 	InitializeHook();
 }
 
@@ -134,4 +147,7 @@ void Dx11Plugin::InitializeHook()
 	pContext->Release();
 	pSwapChain->Release();
 }
-
+void Dx11Plugin::UpdateTelemetry(const TelemInfoV01 &info)
+{
+	add_log("%s", (char*)stringAddress);
+}

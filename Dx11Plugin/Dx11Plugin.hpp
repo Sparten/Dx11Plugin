@@ -26,7 +26,7 @@ public:
 	// These are the functions derived from base class InternalsPlugin
 	// that can be implemented.
 	void Startup(long version);  // game startup
-
+	void UpdateTelemetry(const TelemInfoV01 &info);  // update plugin with telemetry info
 	void InitializeHook();
 private:
 };
